@@ -1,0 +1,170 @@
+https://docs.google.com/document/d/1ESB8fY-5GSJi65RTXlDRnXS7UQlVXVzip07nS6JCVIc/edit?tab=t.0#heading=h.28tx88f7t32x
+Bài 7:
+int a,b; // 2 3
+cin >> a >> b;
+int tich = 1;
+for (int i = 1; i <= b; i++) {
+    tich = tich * a;
+}
+cout << tich;
+
+Bài 8:
+int a,b,x; // a = 1 - b = 10
+    cin >> a >> b >> x;
+    int count = 0;
+    for ( int i = a; i <= b; i++){
+        if ( i % x == 0)
+            count++;
+    }
+    cout << count;
+    // while: lặp khi
+//    while(  <= b )
+// for:
+    while(a<=b){
+        if(a%x == 0) count++;
+        // step:
+        a++;
+    }
+
+// tong = 0 -> tong = tong + ... (1 cái gì đấy)
+    // tich = 1 -> tich = tich * ...
+    // count = 0 -> count++ (nếu thỏa mãn 1 điều kiện gì đấy)
+    // khi không biết trước số lần lặp:
+    // while(condition: xác định được điều kiện)
+    // step: bước nhảy(để thoát vòng lặp)
+    // for(int i = start; i - end; step){}
+
+    /*
+    In ra số dương nhỏ nhất chia hết cho 3 - 5 và 7
+    int a = 1;
+    int count = 0;
+    while ( count < 1 ){
+        // || hoặc &&
+        if ( a % 3 == 0 && a % 5 == 0&& a % 7 ==0 ){
+            count ++;
+            cout << a;
+        }
+        // step:
+        a++;
+    }
+    // In ra 10 số chẵn dương đầu tiên: 2 4 6 8 10 12 14 16 18 20
+     int a = 1;
+     int count = 0;
+     while ( count < 10 ) {
+         if ( a % 2 == 0) {
+             count ++;
+             cout << a << "\t";
+         }
+      a++;
+     }
+     // Tính tổng 5 số dương đầu tiên chia hết cho 3 hoặc 7:
+    int a = 1;
+    int count = 0;
+    int sum = 0;
+    while ( count < 5 ) {
+        if ( a % 3 == 0 || a % 7 == 0){
+            sum = sum + a;
+            count++;
+        }
+        a++;
+    }
+    cout << sum;
+    */
+
+    // Nhập vào 1 số và kiểm tra số đó có phải số nguyên tố hay khng
+    int a;
+    cin >> a; // 13 -> là số nguyên tố (vì chỉ chia hết cho 1 và 13)
+    int count = 0; // 8 -> ko phải nguyên tố vì nó chia hết cho (1 2 4 và 8)
+    for ( int i = 1; i <= a; i++) {
+        if (a % i == 0) {
+            count++;
+        }
+    }
+    if (count == 2) {
+        cout << a << " là số nguyên tố";
+    } else {
+        cout << a << " khong phai la so nguyen to";
+    }
+// In ra màn hình 10 số nguyên tố đầu tiên (số nguyên tố đầu tiên là số 2) và tính tổng 10 số nguyên tố đấy
+    int a = 1;
+    int count = 0;
+    int sum = 0;
+   while ( count < 10) {
+       // bài toán nguyên tố:
+       int countPrime = 0;
+       for ( int i = 1; i <= a; i++){
+           if ( a % i == 0) {
+               countPrime++;
+           }
+       }
+       if (countPrime == 2){
+           cout << a << " ";
+           count++;
+           sum = sum + a;
+       }
+       a++;
+    }
+    cout << endl << sum;
+
+
+---
+ /*
+ Bài tập: Nhập 1 số và kiểm tra số đó có phải số hoàn hảo hay ko?
+Số hoàn hảo là số mà tổng các ước thực sự của nó (không tính chính nó) bằng chính nó.
+Ví dụ N = 28 có các ước 1, 2, 4, 7, 14, 28 thì các ước thực sự là 1, 2, 4, 7, 14
+có tổng cũng bằng 28 nên 28 là số hoàn hảo
+
+  Nhập N -> Tính tổng các ước của số đó:
+  */
+  int a; // 28
+  cin >> a;
+  int sum = 0;
+  for ( int i = 0; i < a; i++) {
+      if ( a % i == 0 ){
+          sum = sum + i;
+      }
+  }
+  // Trong if hoặc else if dùng 2 dấu = để so sánh
+  if ( sum == a){
+      cout << a << "la so hoan hao";
+  } else {
+      cout << a << " ko phai la so hoan hao";
+  }
+
+  ---
+  do while:
+  // do (1 hành động gì đấy) - while (lặp khi):
+
+  // bài toán validate, menu chức năng:
+
+  // Facebook: ten dang nhap, mat khau
+  // Neu khong nhap gi -> hiển thi ra loi ban can nhap ten dang nhap/ mat khau
+  // Mặc định: sẽ được nhập 1 lần
+  // do{
+  //   code here
+  // } while(condition);
+
+      // Nhập tuổi của 1 người, nếu người đấy < 0 tuổi hoặc > 100 tuổi thì sẽ bắt nhập lại:
+  // int age;
+  // do{
+  //     cin >> age;
+  //     if(age < 0 || age > 100) {
+  //         cout << "Invalid age!!!";
+  //     }
+  // } while(age < 0 || age > 100);
+  // cout << age;
+      string username;
+      int count = 0;
+      do {
+          cin >> username;
+          if (username.size() < 8) {
+              cout << "Nhap lai";
+              count++;
+          }
+          if (count > 5) {
+              cout << " ban bi khoa tai khoan";
+              break;
+          }
+
+      } while (username.size() < 8);
+      cout << username << "";
