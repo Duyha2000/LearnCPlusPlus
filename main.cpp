@@ -2,26 +2,30 @@
 
 using namespace std;
 
+// Bài toán tính tổng: sum = 0 -> sum += i (arr[i])
+// Bài toán tính tích: tich = 1 -> tich *= i (arr[i])
+// Bài toán đếm số: count = 0 -> Khi thỏa mãn điều kiện(if else) count++
+// Bài tóan vị trí: position = -1 -> Khi thỏa mãn điều kiện (if else) pos = i
 int main() {
-    // Nhập tên đăng nhập và mật khẩu, tên đăng nhập và mật khẩu phải lớn hơn 8 ký tự, nếu sai bắt nhập lại:
-    //    // Nếu nhập sai 5 lần sẽ in ra bạn bị khóa tài khoản.
-    string username;
-    string password;
-    int count = 0;
-    do {
-        cin >> username;
-        cin >> password;
-        if (username.size() < 8 && password.size() < 8) {
-            cout << username << endl << password << endl << " nhap lai";
-            count++;
+    int arr1[] = {1, 2, 3, 4, 5};
+    int x;
+    cin >> x; // 8
+    // 3 5
+    // postion ( i j)
+    for (int i = 0; i < 5; i++) {
+        for (int j = i + 1; j < 5; j++) {
+            if (arr1[i] + arr1[j] == x) {
+                cout << arr1[i] << "" << arr1[j] << "";
+            }
         }
 
-        if (count > 5) {
-            cout << "ban bi khoa tai khoan";
-        }
+    }
+    // sap xep mang tang dan
+    // Input Example 1: nums = [2, 7, 11, 15], target = 9
+    // Output Example 1: 2,7
+    // 2 số trong array + lại = target:
 
-    } while (username.size() < 8 && password.size() < 8);
-    cout << username << endl << password;
+    // ĐỐi với những bài tập lấy 2 số trong array: dùng 2 vòng for
 
     return 0;
 }
