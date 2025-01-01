@@ -1,0 +1,103 @@
+/*
+ //    String: chuỗi:
+    // string =  "Hello World";
+    // 'h' 'e' 'l' -> char -> 1 byte
+//    int arr[] = {1, 2, 3, 4, 5};
+//    cout << arr[0];
+    string name = "Hello World";
+    cout << name[0]; // 'H'
+    // Size(): lấy độ dài chuỗi
+    cout << name.size(); // 1
+
+    //
+    // index:
+    string password;
+//    cin >> password; // Xin chao cac ban
+    // getline(): để lấy tất cả chuỗi sau khoảng trắng
+    getline(cin, password);
+    cout << password;
+    string account;
+
+    // Để duyệt các ký tự trong string,
+    for (int i = 0; i < name.size(); i++) {
+        cout << i << " Đối với các bài toán về vị trí "; // index - position
+        cout << name[i] << " "; // Sử dug những bài tóan đếm
+    }
+    // First: I love Java -> 11
+// Second: Hello Tek4.VN -> 13
+// Input 2 string và so sánh chuỗi nào dài hơn (nhiều ký tự hơn)
+    string name;
+    getline(cin, name);
+    cout << name;
+    string names;
+    getline(cin, names);
+    cout << names;
+
+    // cout << name.size();
+    // cout << names.size();
+    if (name.size() > names.size()) {
+        cout << name.size();
+    } else {
+        cout << names.size();
+    }
+ */
+
+ // int: 3,4,5,6
+ // double/ float: 3.45678 ( 8 byte - 4 byte)
+ // boolean: true/false
+ // string "Hello World"
+ // char (character): char x; cin >> x;
+ // i : dùng bài toán liên quan vị trí (100%)
+ // Trong if else so sánh dùng 2 dấu = " == "
+ // Không in ra sum và count trong vòng lặp
+     string name;
+     getline(cin, name);
+     char x;
+     cin >> x;
+
+     int count = 0;
+     for (int i = 0; i < name.size(); i++)
+         if (name[i] == x) {
+             count++;
+         }
+     cout << count;
+
+//Input: codewar, 'z'
+// Output: - 1
+//Input: codrwar, 'r'
+//    name[0]
+// i:    0123456
+//  r       ->break
+//          inx
+// Output: 3 (vì r đầu tiên xuất hiện ở vị trí thứ 3)
+// i vai trò là
+    string name;
+    getline(cin, name);
+    char x;
+    cin >> x;
+    int position = -1;
+
+    // KÝ tự nhập vào phải có trong chuỗi đấy
+    for (int i = 0; i < name.size(); i++) {
+        if (name[i] == x) {
+            position = i;
+            break;
+        }
+    }
+    cout << position;
+
+// Nhập vào 1 chuỗi name và 1 ký tự X, in ra các ký tự khác với ký tự X được nhập vào trong chuỗi
+// Input: helllllo - 'l'
+// Output: heo
+// continue -  != kết hợp trong vòng for:
+ string name;
+    getline(cin, name);
+    char x;
+    cin >> x;
+    // 1 2 - 4 5 6
+
+    for (int i = 0; i < name.size(); i++)
+        if (name[i] != x) {
+            cout << name[i];
+        }
+https://docs.google.com/document/d/1k49cKlPUSMBBBhk4IoVrQJJhC-CLEed-ZQO-_Mp6s10/edit?usp=sharing
