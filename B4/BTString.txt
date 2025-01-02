@@ -1,0 +1,40 @@
+# BT1:
+Khai báo và gán giá trị cho 1 chuỗi bất kỳ, viết chương trình yêu cầu người dùng đếm
+số từ trong chuỗi, mỗi từ sẽ cách nhau bởi dấu cách.
+
+Input:
+hello world
+
+Output:
+2
+
+Input:
+xin chao cac ban
+Output:
+3
+--
+string word;
+getline(cin, word);
+int count = 1;
+// Nếu gặp ký tự ' ' -> tăng count lên:
+// hello_world
+for (int i = 0; i < word.size(); i++) {
+    if (word[i] == ' ') {
+        count++;
+    }
+}
+cout << count;
+
+# BT2:
+Khai báo và gán giá trị cho 1 chuỗi bất kỳ, viết chương trình đếm số ký tự là chữ cái, chữ số và ký tự đặc biệt
+có trong chuỗi đó và in ra màn hình.
+
+** Input **
+Hello my gmail is test123@gmail.com
+
+** Output **
+So ky tu la chu cai: 26
+So ly tu la chu so: 3 --
+So ky tu dac biet: 6
+
+

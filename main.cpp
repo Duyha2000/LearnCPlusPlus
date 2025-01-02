@@ -11,50 +11,22 @@ using namespace std;
 // Không in ra sum và count trong vòng lặp
 
 int main() {
-// https://github.com/Duyha2000/Cplusplus/tree/main/String
-//  https://docs.google.com/document/d/1k49cKlPUSMBBBhk4IoVrQJJhC-CLEed-ZQO-_Mp6s10/edit?usp=sharing
-//    string words;
-//    // 1: Input string: abcd -> size = 4
-//    //                 [0]12[3] <- (size - 1 )
-//    //                  dcba
-//    //
-//    getline(cin, words);
-//    // 2: In ra size, cout
-//    cout << words.size() << "\t" << words << endl;
-//    // 3: Reverse string: dcba
-//    for (int i = words.size() - 1; i >= 0; i--) {
-//        cout << words[i];
-//    }
-//    cout << endl;
-    // 4: Chữ số:
-    /*
-    int sum = 0;
-    for (int i = 0; i < words.size(); i++) {
-        if (words[i] >= '0' && words[i] <= '9') {
-            // cout << words[i] << " ";'1' '2' '3' '4'
-            sum += (words[i] - '0'); // ép kiểu từ char -> sang int: - '0'
-            cout << sum;
-
+    string word;
+    getline(cin, word);
+    int countNumber = 0;
+    int countChar = 0;
+    for (int i = 0; i < word.size(); i++) {
+        if (word[i] >= '0' && word[i] <= '9') {
+            countNumber++;
         }
+        if ((word[i] >= 'a' && word[i] <= 'z') || (word[i] >= 'A' && word[i] <= 'Z'))
+            countChar++;
     }
-    cout << sum; */
-    // Tính tổng các chữ số của chuỗi words:
-
-    //  Nhập vào số 123456:
-    // Tính tổng các chữ số của nó
-    // Nhập 1 số, tính tổng các chữ số
-    // Nhập vào 1 số, in ra số đảo ngược:
-    string name;
-    getline(cin, name);
-    int sum = 0;
-    for (int i = 0; i < name.size(); i++) {
-        if (name[i] >= '0' && name[i] <= '9') {
-            sum = sum + (name[i] - '0');
-        }
-    }
-    cout << sum;
-    // "dannnnnnn12346"
-    // sum = 16
-
+    cout << "So ky tu dac biet la: " << word.size() - countChar - countNumber << endl;
+    cout << countNumber << endl;
+    cout << countChar << endl;
+    // "Hello123@"
+    // 9 ky tu: 5 chu - 3 số - 1 [đặc biệt ]
     return 0;
 }
+
