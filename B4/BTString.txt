@@ -37,4 +37,22 @@ So ky tu la chu cai: 26
 So ly tu la chu so: 3 --
 So ky tu dac biet: 6
 
+--
+string word;
+    getline(cin, word);
+    int countNumber = 0;
+    int countChar = 0;
+    for (int i = 0; i < word.size(); i++) {
+        if (word[i] >= '0' && word[i] <= '9') {
+            countNumber++;
+        }
+        if ((word[i] >= 'a' && word[i] <= 'z') || (word[i] >= 'A' && word[i] <= 'Z'))
+            countChar++;
+    }
+    cout << "So ky tu dac biet la: " << word.size() - countChar - countNumber << endl;
+    cout << countNumber << endl;
+    cout << countChar << endl;
+    // "Hello123@"
+    // 9 ky tu: 5 chu - 3 số - 1 [đặc biệt ]
+
 

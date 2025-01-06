@@ -1,0 +1,104 @@
+# Function:
+https://docs.google.com/document/d/130YMvQO2tqBXioqX3mvP7hk9l58QUsWZmrhXUXrG_h4/edit?tab=t.0#heading=h.b945vx857czl
+//Xây dựng hàm có tham số là một mảng bất kỳ, hàm có chức năng in ra tất cả các phần tử có trong mảng được truyền vào.
+
+// Input: arr = {1,3,5,7,9}
+// Output: 1 3 5 7 9
+    int size;
+    cin >> size;
+    int arr[size];
+    for (int i = 0; i < size; i++) {
+        int a;
+        cin >> a;
+        arr[i] = a;
+    }
+    printArr(arr, size);
+
+
+
+void printArr(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+}
+
+// Viiết 1 function tính tổng các số chẵn >0 trong array
+// Input: arr = [-2, -4 , 1 ,3 , 4 , 8]
+// Output: 12 (4 + 8)
+
+// lấy ra số -2: arr[0] -> lấy ra số -2
+// i --> lấy ra số 0 (index, position)
+int sumArray(int arr[], int size) {
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] > 0 && arr[i] % 2 == 0) {
+            sum += arr[i];
+
+        }
+    }
+    return sum;
+}
+int size;
+cin >> size;
+int arr[size];
+for (int i = 0; i < size; i++) {
+int a;
+cin >> a;
+arr[i] = a;
+}
+cout << sumArray(arr, size);
+
+// 3^2 =  3 * 3
+int sumSquares(int n) {
+    int sum = 0;
+    for (int i = 0; i <= n; i++) {
+        sum = sum + i * i;
+    }
+    return sum;
+}    int n;
+cin >> n;
+cout << sumSquares(n);
+
+// n = 5
+// n * n * n
+int cubeNumber(int n) {
+    return n * n * n;
+}
+int n;
+cin >> n;
+cout << cubeNumber(n);
+
+
+
+double areaCircle(double r) {
+    return 3.14 * r * r;
+    // 3.14 * 2 * 2 = int (số nguyên)
+}
+
+double cirCircle(double r) {
+    return 2 * 3.14 * r;
+}
+cin >> r;
+cout << areaCircle(r) << endl;
+cout << cirCircle(r);// Area: PI * r * r
+// Perimeter: 2 * PI * r (3.14)
+
+int powNumber(int a, int b) {
+    // a = 2
+    // b = 3
+    // 2 * 2 * 2 = 8
+
+    // a  = 2 , b = 5
+    // 2 * 2 * 2 * 2 * 2
+    int tich = 1;
+
+    for (int i = 0; i < b; i++) {
+        tich = tich * a;
+    }
+    return tich;
+}
+int a, b;
+cin >> a >> b;
+cout << powNumber(a, b);
+# On tap:
+https://docs.google.com/document/d/13-A4W6R2VpzTduL1L6j_9kkFvIoM7VTo3gIx9uwKz7g/edit?tab=t.0

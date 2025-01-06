@@ -1,0 +1,101 @@
+/* Function:
+    // main(): tất cả code chạy trong c++ nó sẽ chạy trong main:
+    // in ra các số từ 1 - > 5
+//    for (int i = 1; i <= 5; i++) {
+//        cout << i << "\t";
+//    }
+//    // in ra các số từ 1 - > 7
+//
+//    for (int i = 1; i <= 7; i++) {
+//        cout << i << "\t";
+//    }
+//
+//    // in ra các số từ 1 - > 10
+//    for (int i = 1; i <= 10; i++) {
+//        cout << i << "\t";
+//    }
+    // in ra các số từ 1 -> n
+
+    // Gọi hàm bên trong main()
+    displayNumber(5);
+    displayNumber(7);
+    displayNumber(10);
+    displayNumber(12);
+    int n;
+    cin >> n;
+    cout << sum(n);
+
+    // Viết 1 hàm in ra các số chia hết cho 2 từ 1 đến n:
+    // Input: 10
+    // Output: 2 4 6 8 10
+
+    // void: in ra - int/double: tính toán
+
+      int n;
+    cin >> n;
+    // Gọi hàm:
+    number(n);
+     */
+
+    // Xây dựng hàm tính tổng 2 số được nhập từ bàn phím có kết quả trả về là tổng tính được.
+    // Input: 3 4
+    // Output: 7
+
+    /*
+    int a, b;
+    cin >> a >> b;
+    cout << sumTwoNumber(a, b);
+*/
+    // Xây dựng hàm có tham số là một số nguyên bất kỳ, kết quả trả về là giai thừa của đối số truyền vào.
+    // Input: 5
+    // Output: 5! = 5 * 4 * 3 * 2 * 1
+
+    // Input: 8
+    // Ouput: 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1
+    int n;
+    cin >> n;
+    cout << factorial(n);
+
+   ---
+   // Function: kiểu data types + tên hàm {
+   // code bên trong
+   // }
+   // void: in ra kết quả ( hàm không return)
+   // Hàm tính toán (giai thừa, tổng, tích, đếm số) -> return
+   // (parameter: tham số : những gi trị có thể thay đổi được)
+   void displayNumber(int n) {
+       for (int i = 1; i <= n; i++) {
+           cout << i << "\t";
+       }
+       cout << endl;
+   }
+
+   // Tính tổng các số từ 1 -> n:
+   int sum(int n) {
+       int sum = 0;
+       for (int i = 1; i <= n; i++) {
+           sum += i;
+       }
+       return sum;
+   }
+
+   void number(int n) {
+       for (int i = 0; i <= n; i++)
+           if (i % 2 == 0) {
+               cout << i << " ";
+           }
+   }
+
+   // int a,int b: gọi là 2 tham số (giá trị có khả năng thay đổi)
+   int sumTwoNumber(int a, int b) {
+       return a + b;
+   }
+
+   int factorial(int n) {
+       int tich = 1;
+       for (int i = 1; i <= n; i++) {
+           tich *= i;
+       }
+       // phần cuối function:
+       return tich;
+   }
