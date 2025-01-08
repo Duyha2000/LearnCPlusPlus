@@ -100,5 +100,29 @@ int powNumber(int a, int b) {
 int a, b;
 cin >> a >> b;
 cout << powNumber(a, b);
+
+// Exercise 10: Check Perfect Number
+// Input: 28: các ước là 1 2 4 7 14
+// Tổng các ưoc sô = số input  (PerfectNumber)
+// Output: PerfectNumber
+
+// Input: 10: các ước là 1 2 5
+// Tổng các ước số = 8 != 10 ( k phải perfect number)
+int n;
+cin >> n;
+perNumber(n);
+void perNumber(int n) {
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        if (n % i == 0) {
+            sum = sum + i;
+        }
+    }
+    if (sum == n) {
+        cout << n << " la so hoan hao";
+    } else {
+        cout << n << " ko la so hoan hao";
+    }
+}
 # On tap:
 https://docs.google.com/document/d/13-A4W6R2VpzTduL1L6j_9kkFvIoM7VTo3gIx9uwKz7g/edit?tab=t.0

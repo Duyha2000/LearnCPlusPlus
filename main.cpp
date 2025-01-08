@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -10,33 +11,45 @@ using namespace std;
 // Trong if else so sánh dùngareaCircle(double r) 2 dấu = " == "
 // Không in ra sum và count trong vòng lặp
 
-// https://docs.google.com/document/d/130YMvQO2tqBXioqX3mvP7hk9l58QUsWZmrhXUXrG_h4/edit?tab=t.0#heading=h.b945vx857czl
-void perNumber(int n) {
-    int sum = 0;
-    for (int i = 0; i < n; i++) {
-        if (n % i == 0) {
-            sum = sum + i;
-        }
+
+double findAvg(int array[], int size) {
+    double sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum = sum + array[i];
     }
-    if (sum == n) {
-        cout << n << " la so hoan hao";
-    } else {
-        cout << n << " ko la so hoan hao";
-    }
+    return sum / size;
 }
+
+int findMin(int array[], int size) {
+    int minNumber = array[0];
+    // 1 8 5 7 9
+    // maxNumber = arr[0] = 1
+    //         ->
+    // Cầm giá trị maxNumber so sánh array[i] -> nếu array[i] > maxNumber -> maxNumber là array[i]
+    for (int i = 0; i < size; i++) {
+        if (array[i] < minNumber) {
+            minNumber = array[i];
+        }
+
+    }
+    return minNumber;
+}
+
+//void displayArray(int array[], int size) {
+//for (int i = 0; i < size; i++)
+//cout << array[i];}
 
 
 int main() {
-    // Exercise 10: Check Perfect Number
-    // Input: 28: các ước là 1 2 4 7 14
-    // Tổng các ưoc sô = số input  (PerfectNumber)
-    // Output: PerfectNumber
-
-    // Input: 10: các ước là 1 2 5
-    // Tổng các ước số = 8 != 10 ( k phải perfect number)
-    int n;
-    cin >> n;
-    perNumber(n);
+    int size;
+    cin >> size;
+    int array[size];
+    for (int i = 0; i < size; i++) {
+        int a;
+        cin >> a;
+        array[i] = a;
+    }
+    cout << findAvg(array, size);
     return 0;
 }
 

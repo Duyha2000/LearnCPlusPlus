@@ -21,11 +21,12 @@ int main() {
 //    getline(cin, words);
 //    // 2: In ra size, cout
 //    cout << words.size() << "\t" << words << endl;
-//    // 3: Reverse string: dcba
+// 3: Reverse string: dcba
 //    for (int i = words.size() - 1; i >= 0; i--) {
 //        cout << words[i];
 //    }
 //    cout << endl;
+
     // 4: Chữ số:
     /*
     int sum = 0;
