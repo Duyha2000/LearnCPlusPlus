@@ -1,0 +1,456 @@
+# Link: https://docs.google.com/document/d/1aZamgz-0NvoSH_pvjMnIQume8s5or6FeyQEvVVfuriY/edit?tab=t.0
+# Theory: https://blog.28tech.com.vn/c-tham-chieu-va-tham-tri
+
+Final Review 1:
+//This program is used as a review for the final exam.
+
+//--------------------------------------------------------------------------------------------------------
+//NOTE: this does not mean that the questions on here will be in the exam, nor does it mean that questions
+//      absent will not be on the exam.
+//--------------------------------------------------------------------------------------------------------
+
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+void refVarFunc(int &, int);
+
+int main() {
+    /*
+    ---------------------------------------------------------------------------------------
+    PROBLEM #1
+
+    1. What does it mean to increment something? What operator is used in C++ to do this? [a = 2]
+    a++;
+    a = a + 2; // a += 2
+    2. What does it mean to decrement something? What operator is used in C++ to do this?
+    a--;
+    a = a - 2 // a -= 2
+    3. What is the difference in using an increment/decrement operator in postfix or prefix? ( a++ and ++a)
+    int a = 2;
+    cout << a++ << endl; // in ra 2 rồi tăng lên 1 đơn vị
+    cout << a; // 3
+    cout << ++a; // tăng rồi mới in
+    // phép toán trong C++ chạy từ trái qua phải
+
+    ---------------------------------------------------------------------------------------
+    */
+
+
+    /*
+    ---------------------------------------------------------------------------------------------------------------
+    PROBLEM #2
+
+    1. What does it mean to find the modulus (mod) of something? What operator is used in C++ to do this?: % : chia lấy phần nguyên
+    2. What operator is used in C++ to represent division? / chia lấy phần nguyên: 8 / 3 = 2 (div)
+    3. What will be the data type of the result of division between two integers?
+    int a = 8;
+    int b = 3;
+    cout << a / b << endl; // int: 2
+    double c = 8;
+    double d = 3;
+    cout << c / d; // double: 2.66667
+    4. What will be the result of the expression 7 / 2? What will be different compared to the expression 7.0 / 2?
+    7 / 2 = 3 (int)
+    7.0 / 2 = 3.5 (double)
+    ---------------------------------------------------------------------------------------------------------------
+    */
+
+
+    /*
+    -------------------------------------------------------------------------------
+    PROBLEM #3
+
+    What will the variables 'someNum', 'anotherNum', 'lastNum', and 'aBool' contain
+    after the execution of the following code?
+    -------------------------------------------------------------------------------
+    */
+
+    int someNum = 2, anotherNum = 3, lastNum = 1;
+    bool aBool; // "true: 1 - false: 0"
+
+    aBool = !(++someNum > (--anotherNum * lastNum++));
+             -> 3       > (  2 *  1 ) -> 1
+    /*
+    ------------------------------------------------------------------------------------------------
+    PROBLEM #4
+
+    1. Name the three different types of loops:
+    int a; // 5
+    cin >> a;
+    for ( int i= 0; i <= a; i++) {
+        cout << i << " ";
+    }
+    --
+    While: in ra các số từ 0 -> 5
+    int a; // a = 0
+    cin >> a;
+    while (a <= 5) {
+        // Logic code:
+        cout << a; // a = 0
+        a++; // a = 1
+    }
+    // while(b1: condition){
+    // b3: logic code
+    // b2: step:
+    // a++ a--
+    // }
+
+    // do-while:
+    int a;
+    do {
+        cin >> a;
+        if (a <= 18) {
+            cout << "fail can nhap lai";
+        }
+    } while (a <= 18);
+    cout << a;
+
+
+    2. For each type of loop, state if the loop is pretest or posttest, and explain what that means.
+    ------------------------------------------------------------------------------------------------
+    */
+
+
+    /*
+    ----------------------------------------------------------------------------------
+    PROBLEM #5
+
+    What are the three parts of a for loop definition called? What do each of them do?
+    ----------------------------------------------------------------------------------
+    */
+
+
+    /*
+    -------------------------------------------------------------------------------
+    PROBLEM #6
+
+    What will be displayed on the screen after the execution of the following code?
+    -------------------------------------------------------------------------------
+    */
+
+    int counter = 0;
+    bool moreThan20 = false;
+    // 0
+    2
+    4
+    8
+    10
+    12
+    14
+    gettingclose
+    16
+    18
+    ...Almost there...
+    20
+    22 overddd
+    while (!moreThan20) {
+        if (counter != 6) {
+            cout << counter << endl;
+        }
+
+        if (counter == 14) {
+            cout << "...Getting close..." << endl;
+        } else if (counter == 18) {
+            cout << "...Almost there..." << endl;
+        }
+
+        if (counter > 20) {
+            cout << "...It's over twenty..." << endl;
+            moreThan20 = true;
+        }
+
+        // step:
+        counter += 2;
+    }
+
+
+    /*
+    --------------------------------------------------------------------------
+    PROBLEM #7
+
+    What do the following statements evaluate to, given the defined variables?
+    --------------------------------------------------------------------------
+    */
+
+    string name1 = "John", name2 = "Jane", name3 = "Devin", name4 = "John ";
+    name1 < name2; ->
+
+    name2 > "Janet"; ->
+
+    name3 != "devin"; ->
+
+    name3 < "DEVIN"; ->
+
+    name1 == name4; ->
+
+
+string name1 = "John", name2 = "Janaaaaae", name3 = "Devin", name4 = "John ";
+    // name1 < nam vcbgge2;
+    bool statement1 = name1 < name2; // 'o' > 'a' -> so sánh từng ḱy tư với nhau  (k cần quan tâm length)̣
+    cout << statement1; // 0: false - 1 là true
+    //  name2 > "Janet"; ->
+    bool statement2 = name2 > "Janet";
+    cout << statement2;
+    // name3 != "devin"; -> true
+    //    name3 < "DEVIN"; -> "Devin" < "DEVIN" -> false: e: 101 - E : 69
+    //https://quantrimang.com/cong-nghe/bang-ma-ascii-va-bang-ky-tu-latin-chuan-iso-1252-144939
+    //    name1 == name4; ->
+    bool statement4 = name1 == name4;
+    // string name1  ->                 -- - - -
+    cout << &name1 << endl; //000x16dde36d0
+    cout << &name4; // 000x16dde36d0
+    // Duy HN - Duy HCM
+    cout << endl << statement4; //0: phép so sánh 2 chuỗi là phép so sánh địa chỉ
+
+
+    ---------------------------------------------------------------------------------------------------------
+    PROBLEM #8
+
+    Given the function definition below, what will the value of 'x' and 'y' be after the code executes below?
+
+    ---------------------------------------------------------------------------------------------------------
+    */
+
+    int x = 10, y = 2;
+
+    refVarFunc(x, y);
+
+    return 0;
+}
+
+/*----------------------------------------
+ Here are the functions for this worksheet
+----------------------------------------*/
+
+void refVarFunc(int &num1, int num2) {
+    for (int i = 0; i < 5; i++) {
+        num1++;
+        num2 += 2;
+    }
+}
+
+-------
+
+Final Review 2:
+
+//This program is used as a review for the final exam.
+
+//--------------------------------------------------------------------------------------------------------
+//NOTE: this does not mean that the questions on here will be in the exam, nor does it mean that questions
+//      absent will not be on the exam.
+//--------------------------------------------------------------------------------------------------------
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void doSomething(int, double &);
+
+int main() {
+    /*
+    ------------------------------------------------------------------------------
+    PROBLEM #1
+    What are global and local variables? What are the differences between the two?
+    ------------------------------------------------------------------------------
+    */
+
+
+    /*
+    -----------------------------------------------------------------------------------------------
+    PROBLEM #2
+
+    Write the function header for a function called overtimePay, that returns a double and has a
+    parameter list that takes a string called name, an int named hours, and a double named payrate.
+
+    Then, write the function prototype for this function in the space above the main function.
+    -----------------------------------------------------------------------------------------------
+    */
+
+
+    /*
+    -----------------------------------------------------------------------
+    PROBLEM #3
+
+    What is a function signature? What does it mean to overload a function?
+    -----------------------------------------------------------------------
+    */
+
+
+    /*
+    ----------------------------------------------------------------------------------------------------
+    PROBLEM #4
+
+    Given the function definition below (also found after the main function), call the function and pass
+    the variables 'firstVal' and 'secondVal' into the function, respectively.
+
+    What will be displayed on the screen after the execution of the code? What will the variables
+    'firstVal' and 'secondVal' contain?
+    ----------------------------------------------------------------------------------------------------
+    */
+
+    int firstVal = 4;
+    double secondVal = 3.14;
+    doSomething(firstVal, secondVal);
+    //
+
+
+    /*
+    -----------------------------------------------------------------------------
+    PROBLEM #5
+
+    Create an array named 'aBunchOfStuff' of type string and with the size of 45.
+
+    Use a constant integer, named SIZE, to define the size.
+    string aBunchOfStuff[45];
+
+    -----------------------------------------------------------------------------
+    */
+
+
+    /*
+    -----------------------------------------------------------------------------------------------------
+    PROBLEM #6
+
+    Create an array named 'letters' of type char and initialize it with the values of 'a', 'b', 'c', 'd',
+    and 'z' in one line.
+    char letters[] = { 'a' , 'b', 'c', 'd', 'z'};
+
+    char x = 'a';
+    string name = "Tran";
+    int a = 4;
+    -----------------------------------------------------------------------------------------------------
+    */
+
+
+    /*
+    --------------------------------------------------------------------------
+    PROBLEM #7
+
+    What is a range-based for loop? How does it differ from a normal for loop?
+    --------------------------------------------------------------------------
+    */
+
+
+    /*
+    ----------------------------------------------------------------------------------------------------------------
+    PROBLEM #8:
+
+    Write a range-based for loop that will display every element in an array. Use the array 'numbers' defined below.
+    ----------------------------------------------------------------------------------------------------------------
+    */
+
+    int numbers[] = {1, 5, 8, 34, 6, 73, 2};
+    for (int i : numbers) {
+        cout << i << " ";
+    }
+
+
+    /*
+    --------------------------------------------------------------------------------------------------------------
+    PROBLEM #9
+
+    Complete the function 'arrayFunc' defined below the main function. The function should first display
+    every element in the passed array, and then add 5 to each element.
+
+    Then, call the function using the defined array 'numbers2'. What will the values of the elements of 'numbers2'
+    be after you call the function 'arrayFunc'?
+    --------------------------------------------------------------------------------------------------------------
+    */
+    void arrayFunc(int arr[], int size) {
+    for ( int i= 0; i < size; i++) {
+    cout << arr[i] << " ";
+      }
+    }
+    int main(){
+        int size;
+        cin >> size;
+        int arr[size];
+        for( int i = 0; i < size; i++) {
+        int a;
+        cin >> a;
+        arr[size] = a;
+        }
+        arrayFunc(arr, size);
+
+    }
+    }
+    /*
+
+
+
+    ------------------------------------------------------------------------------------
+    PROBLEM #10
+
+    What are two algorithms used to search through arrays for a value? How do they work?
+    ------------------------------------------------------------------------------------
+    */
+
+
+    /*
+    --------------------------------------------------------------------
+    PROBLEM #11:
+
+    What are the two algorithms used to sort an array? How do they work?
+    --------------------------------------------------------------------
+    */
+
+
+    /*
+    ---------------------------------------------------------------------------------------------------------------
+    PROBLEM #12:
+
+    Given the following array 'jumbled', what will the array be after the first swap of a selection sort algorithm?
+    (Assume the algorithm sorts in ascending order).
+    ---------------------------------------------------------------------------------------------------------------
+    */
+
+    int jumbled[] = {12, 5, 3, 1, 9, 100, 45};
+
+
+    /*
+    ---------------------------------------------------------------------------------------------------------------
+    PROBLEM #13
+
+    Given the following array 'jumbled2', what will the array be after the third swap of a bubble sort algorithm?
+    (Assume the algorithm sorts in ascending order).
+    ---------------------------------------------------------------------------------------------------------------
+    */
+
+    int jumbled2[] = {5, 9, 50, 6, 1, 70, 0};
+
+
+    return 0;
+}
+
+
+/*------------------------------------------------
+Here are the function definitions for this program
+------------------------------------------------*/
+
+void doSomething(int a, double &b) {
+    for (int i = 0; i < a; i++) {
+        cout << ".";
+        b += 0.01;
+    }
+
+    cout << endl;
+
+    a += 5;
+
+    cout << "A variable a is: " << a << endl;
+}
+
+
+//******************************************************************************
+// The function arrayFunc should display all the elements in the passed array. *
+// Then, the function should add 5 to each element in the array.			   *
+//******************************************************************************
+void arrayFunc(int array1[], int size) {
+
+}
+
+

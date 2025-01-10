@@ -11,45 +11,38 @@ using namespace std;
 // Trong if else so sánh dùngareaCircle(double r) 2 dấu = " == "
 // Không in ra sum và count trong vòng lặp
 
-
-double findAvg(int array[], int size) {
-    double sum = 0;
-    for (int i = 0; i < size; i++) {
-        sum = sum + array[i];
+// pass by value: int num2
+// pass by reference:  &
+void refVarFunc(int &num1, int num2) {
+    for (int i = 0; i < 5; i++) {
+        num1++;
+        num2 += 2;
+        // cout << num ;  0 1 2 3 4
     }
-    return sum / size;
 }
 
-int findMin(int array[], int size) {
-    int minNumber = array[0];
-    // 1 8 5 7 9
-    // maxNumber = arr[0] = 1
-    //         ->
-    // Cầm giá trị maxNumber so sánh array[i] -> nếu array[i] > maxNumber -> maxNumber là array[i]
-    for (int i = 0; i < size; i++) {
-        if (array[i] < minNumber) {
-            minNumber = array[i];
-        }
-
+void doSomething(int a, double &b) {
+    for (int i = 0; i < a; i++) {
+        cout << ".";
+        b += 0.01;
     }
-    return minNumber;
+    cout << endl;
+    a += 5;
+    cout << "A variable a is: " << a << endl; // a = 10
 }
-
-//void displayArray(int array[], int size) {
-//for (int i = 0; i < size; i++)
-//cout << array[i];}
-
 
 int main() {
-    int size;
-    cin >> size;
-    int array[size];
-    for (int i = 0; i < size; i++) {
-        int a;
-        cin >> a;
-        array[i] = a;
-    }
-    cout << findAvg(array, size);
+    int a = 5;
+    double b = 0.0;
+    doSomething(a, b);
+    cout << a << " " << b << endl; // a = 5 - b = 0.05
+    //
+    int x = 10, y = 2;
+
+    refVarFunc(x, y);
+    cout << x << endl << y;
+    // x = 15
+    // y = 2 -> ko thay đổi giá trị
     return 0;
 }
 

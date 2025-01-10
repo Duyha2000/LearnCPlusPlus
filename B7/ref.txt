@@ -1,0 +1,60 @@
+void increValue(int n) {
+    n++;
+    cout << "n function" << n << endl;
+    cout << &n << endl;
+}
+
+void increRef(int &n) {
+    n++;
+    cout << "n function" << n << endl;
+    cout << &n << endl;
+}
+
+
+// Hoán đổi giá trị: pass by value
+void swapNumber(int a, int b) {
+    int temp = 0;
+    // B1: đổ A sang temp -> temp sẽ mang nước bình A
+    temp = a;
+    a = b;
+    b = temp;
+    cout << a << " \t" << b; // tạo ra 2 bản sao trong vùng nhớ máy tính -> swap giá trị cho nhau
+    // Dọn dẹp vùng nhớ
+}
+
+void swapNumberRef(int &a, int &b) {
+    int temp = 0;
+    // B1: đổ A sang temp -> temp sẽ mang nước bình A
+    temp = a;
+    a = b;
+    b = temp;
+}
+--
+int n; // 4 byte, char 1 byte
+    // RAM: Random access memory: 8gb - 8 tỷ ô nhớ, mỗi 1 ô nhớ là 1 byte
+    // Địa chỉ ô nhớ
+
+    // 5 phần tử array kiểu ký tự :  [- - - - - ]
+    // Địa chỉ ô nhớ trong máy tính: &
+    cin >> n; // - - - -
+    cout << n << endl; // value: 5
+    cout << &n << endl; // 0x16bc7f6e8
+    // Pass by value:
+
+    // 0x16bc7f6e8 - - - --                                     0x16bc7f6ac
+    // Tạo ra 1 bản sao trong vùng nhớ máy tính -> thực hiện logic trên vùng nhớ đấy -> sau khi thực hiện xong sẽ dọn dẹp vùng nhớ
+    increValue(n);
+    // Sau khi gọi function giá trị sẽ lên 6:
+    cout << "After incre value: " << n;
+
+    // Pass by reference:
+    increRef(n);
+    cout << "After incre reference: " << n << endl;
+
+    // a = 3 - b = 4 -> swap a và b (in ra b = 4 , b = 3 ) -> swap(a,b)
+    int a = 3, b = 4;
+
+    cout << a << "\t" << b;
+    // swapNumber(a, b);
+    swapNumberRef(a, b);
+    cout << endl << a << "\t" << b;
